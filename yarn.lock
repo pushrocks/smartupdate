@@ -34,15 +34,15 @@
     "@types/node" "*"
 
 "@types/glob@*":
-  version "5.0.30"
-  resolved "https://registry.yarnpkg.com/@types/glob/-/glob-5.0.30.tgz#1026409c5625a8689074602808d082b2867b8a51"
+  version "5.0.31"
+  resolved "https://registry.yarnpkg.com/@types/glob/-/glob-5.0.31.tgz#6cb8500bd170750c1948f785cc5828e9cff0c36a"
   dependencies:
     "@types/minimatch" "*"
     "@types/node" "*"
 
 "@types/lodash@4.x.x", "@types/lodash@^4.14.55", "@types/lodash@^4.14.67", "@types/lodash@^4.14.68":
-  version "4.14.72"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.72.tgz#f090cf6eb1fee1647a0efa1ebe18b0b78ed551c6"
+  version "4.14.73"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.73.tgz#9837e47db8643ba5bcef2c7921f37d90f9c24213"
 
 "@types/minimatch@*":
   version "3.0.0"
@@ -107,11 +107,12 @@ balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
 
-beautycolor@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/beautycolor/-/beautycolor-1.0.7.tgz#a4715738ac4c8221371e9cbeb5a6cc6d11ecbf7c"
+beautycolor@^1.0.7, beautycolor@^1.0.9:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/beautycolor/-/beautycolor-1.0.10.tgz#4b50758e59115839b3bb2bfe8aaaec9e29c747dd"
   dependencies:
     ansi-256-colors "^1.1.0"
+    tapbundle "^1.1.1"
     typings-global "^1.0.14"
 
 beautylog@^6.1.10:
@@ -459,17 +460,17 @@ nan@^2.3.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.6.2.tgz#e4ff34e6c95fdfb5aecc08de6596f43605a7db45"
 
-npmextra@^2.0.8:
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/npmextra/-/npmextra-2.0.8.tgz#9fd3c451edee5a65da0e61df331be6f2313f4676"
+npmextra@^2.0.9:
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/npmextra/-/npmextra-2.0.9.tgz#bd32b91590a8b3e2eabdfed26c324a1952758c2c"
   dependencies:
     beautylog "^6.1.10"
-    smartfile "^4.2.17"
+    smartfile "^4.2.20"
     smartlodash "^1.0.1"
     smartpath "^3.2.8"
     smartq "^1.1.6"
     taskbuffer "^1.0.22"
-    typings-global "^1.0.19"
+    typings-global "^1.0.20"
 
 object-keys@^1.0.8:
   version "1.0.11"
@@ -550,8 +551,8 @@ rechoir@^0.6.2:
     resolve "^1.1.6"
 
 remove-trailing-separator@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/remove-trailing-separator/-/remove-trailing-separator-1.0.2.tgz#69b062d978727ad14dc6b56ba4ab772fd8d70511"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"
 
 replace-ext@^1.0.0:
   version "1.0.0"
@@ -626,7 +627,7 @@ smartenv@^2.0.0:
     smartq "^1.1.1"
     typings-global "^1.0.14"
 
-smartfile@^4.2.17:
+smartfile@^4.2.20:
   version "4.2.20"
   resolved "https://registry.yarnpkg.com/smartfile/-/smartfile-4.2.20.tgz#abc37c04fb7b3afea68fa295dfb80083361a8028"
   dependencies:
@@ -650,10 +651,11 @@ smartlodash@^1.0.1:
     "@types/node" "^8.0.10"
     lodash "^4.17.4"
 
-smartnpm@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/smartnpm/-/smartnpm-1.0.3.tgz#62efa486d92f21d1299209ced5557e0796beccbd"
+smartnpm@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/smartnpm/-/smartnpm-1.0.4.tgz#026ce3b3f3b46ec546de51908a0d408848466c0d"
   dependencies:
+    beautycolor "^1.0.9"
     beautylog "^6.1.10"
     smartrequest "^1.0.6"
     typings-global "^1.0.16"
@@ -689,6 +691,12 @@ smartshell@^1.0.6:
     smartq "^1.1.6"
     typings-global "^1.0.19"
     which "^1.2.14"
+
+smarttime@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/smarttime/-/smarttime-1.0.6.tgz#0412a021cff88e8e41b766103a2d9e42fe816ddc"
+  dependencies:
+    typings-global "^1.0.16"
 
 sprintf-js@~1.0.2:
   version "1.0.3"
@@ -733,7 +741,7 @@ symbol-observable@^1.0.1:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
 
-tapbundle@^1.0.13:
+tapbundle@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/tapbundle/-/tapbundle-1.1.1.tgz#ec4172c0e82a77b1f6133fef2606311ede28a62d"
   dependencies:
