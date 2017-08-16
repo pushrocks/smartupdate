@@ -35,7 +35,7 @@ export class SmartUpdate {
     newData.latestVersion = npmPackage.version
     let upgradeBool = await this.checkIfUpgrade(npmPackage, compareVersion)
     if(upgradeBool) {
-
+      
     }
     this.kvStore.writeKey(npmnameArg, newData)
   }
