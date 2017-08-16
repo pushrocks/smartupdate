@@ -27,7 +27,7 @@ export class SmartUpdate {
       let lastCheckTimeStamp = TimeStamp.fromMilliSeconds(result.lastCheck)
       let compareTime = plugins.smarttime.getMilliSecondsFromUnits({ days: 1 })
       if (!lastCheckTimeStamp.isOlderThan(timeStamp, compareTime)) {
-        plugins.beautylog.log('not checking for new version since this has been done already for today')
+        plugins.beautylog.log(`smartupdate: next check tomorrow: ${plugins.beautycolor.coloredString(`${npmnameArg} has already been checked for today.`, 'pink')}`)
         return
       }
     }
@@ -41,7 +41,7 @@ export class SmartUpdate {
   }
 
   private async getNpmPackageFromRegistry (npmnameArg) {
-    plugins.beautylog.log(`checking for newer version of ${npmnameArg}...`)
+    plugins.beautylog.log(`smartupdate: checking for newer version of ${plugins.beautycolor.coloredString(npmnameArg, 'pink')}...`)
     let npmRegistry = new plugins.smartnpm.NpmRegistry()
     let npmPackage = (await npmRegistry.search({ name: npmnameArg, boostExact: true }))[0]
     return npmPackage
@@ -49,7 +49,7 @@ export class SmartUpdate {
 
   private async checkIfUpgrade (npmPackage: plugins.smartnpm.NpmPackage, versionArg: string) {
     if (npmPackage.version === versionArg) {
-      plugins.beautylog.ok(`You are running the latest version of ${npmPackage.name}`)
+      plugins.beautylog.ok(`smartupdate: You are running the latest version of ${plugins.beautycolor.coloredString(npmPackage.name, 'pink')}`)
       return false
     } else {
       plugins.beautylog.warn(`There is a newer version of ${npmPackage.name} available on npm.`)

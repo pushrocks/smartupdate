@@ -13,6 +13,7 @@
     "tapbundle": "^1.1.1"
   },
   "dependencies": {
+    "beautycolor": "^1.0.10",
     "beautylog": "^6.1.10",
     "npmextra": "^2.0.9",
     "smartnpm": "^1.0.4",

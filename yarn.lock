@@ -107,7 +107,7 @@ balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
 
-beautycolor@^1.0.7, beautycolor@^1.0.9:
+beautycolor@^1.0.10, beautycolor@^1.0.7, beautycolor@^1.0.9:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/beautycolor/-/beautycolor-1.0.10.tgz#4b50758e59115839b3bb2bfe8aaaec9e29c747dd"
   dependencies:
