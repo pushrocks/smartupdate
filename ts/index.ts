@@ -13,7 +13,7 @@ import { KeyValueStore } from 'npmextra'
 export class SmartUpdate {
   kvStore = new plugins.npmextra.KeyValueStore('custom', 'global:smartupdate')
 
-  async check (npmnameArg: string, compareVersion: string) {
+  async check (npmnameArg: string, compareVersion: string, changelogUrlArg?: string) {
     let result: ICacheStatus = await this.kvStore.readKey(npmnameArg)
     let timeStamp = new TimeStamp()
 
@@ -33,7 +33,7 @@ export class SmartUpdate {
     }
     let npmPackage = await this.getNpmPackageFromRegistry(npmnameArg)
     newData.latestVersion = npmPackage.version
-    let upgradeBool = await this.checkIfUpgrade(npmPackage, compareVersion)
+    let upgradeBool = await this.checkIfUpgrade(npmPackage, compareVersion, changelogUrlArg)
     if(upgradeBool) {
       
     }
@@ -47,14 +47,21 @@ export class SmartUpdate {
     return npmPackage
   }
 
-  private async checkIfUpgrade (npmPackage: plugins.smartnpm.NpmPackage, versionArg: string) {
+  private async checkIfUpgrade (
+    npmPackage: plugins.smartnpm.NpmPackage,
+    versionArg: string,
+    changelogUrlArg?: string
+  ) {
     if (npmPackage.version === versionArg) {
       plugins.beautylog.ok(`smartupdate: You are running the latest version of ${plugins.beautycolor.coloredString(npmPackage.name, 'pink')}`)
       return false
     } else {
       plugins.beautylog.warn(`There is a newer version of ${npmPackage.name} available on npm.`)
-      plugins.beautylog.info(`Your version: ${versionArg} | version on npm: ${npmPackage.version}`)
-      plugins.beautylog.warn(`!!! You should upgrade!!!`)
+      plugins.beautylog.warn(`Your version: ${versionArg} | version on npm: ${npmPackage.version}`)
+      if (!process.env.CI && changelogUrlArg) {
+        plugins.beautylog.log('trying to open changelog...')
+        plugins.smartopen.openUrl(changelogUrlArg)
+      }
       return true
     }
   }

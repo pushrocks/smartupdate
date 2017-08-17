@@ -56,6 +56,10 @@
   version "8.0.22"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.22.tgz#9c6bfee1f45f5e9952ff6b487e657ecca48c7777"
 
+"@types/open@^0.0.29":
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/@types/open/-/open-0.0.29.tgz#3de910012674909db14d608d1fde44ffa7a9ecea"
+
 "@types/promises-a-plus@*":
   version "0.0.27"
   resolved "https://registry.yarnpkg.com/@types/promises-a-plus/-/promises-a-plus-0.0.27.tgz#c64651134614c84b8f5d7114ce8901d36a609780"
@@ -495,6 +499,10 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
+open@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/open/-/open-0.0.5.tgz#42c3e18ec95466b6bf0dc42f3a2945c3f0cad8fc"
+
 ora@^1.1.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/ora/-/ora-1.3.0.tgz#80078dd2b92a934af66a3ad72a5b910694ede51a"
@@ -659,6 +667,14 @@ smartnpm@^1.0.4:
     beautylog "^6.1.10"
     smartrequest "^1.0.6"
     typings-global "^1.0.16"
+
+smartopen@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/smartopen/-/smartopen-1.0.3.tgz#11a5835b50103e09fc9702ec9a884605ad7e584d"
+  dependencies:
+    "@types/open" "^0.0.29"
+    open "^0.0.5"
+    typings-global "^1.0.20"
 
 smartpath@^3.2.8:
   version "3.2.8"
