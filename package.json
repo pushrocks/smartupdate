@@ -13,12 +13,13 @@
     "tapbundle": "^1.1.1"
   },
   "dependencies": {
-    "beautycolor": "^1.0.10",
+    "beautycolor": "^1.0.11",
     "beautylog": "^6.1.10",
     "npmextra": "^2.0.9",
     "smartnpm": "^1.0.4",
     "smartopen": "^1.0.3",
     "smarttime": "^1.0.6",
+    "smartversion": "^1.0.3",
     "typings-global": "^1.0.20"
   }
 }

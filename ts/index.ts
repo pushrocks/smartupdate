@@ -25,9 +25,15 @@ export class SmartUpdate {
     }
     if (result) {
       let lastCheckTimeStamp = TimeStamp.fromMilliSeconds(result.lastCheck)
-      let compareTime = plugins.smarttime.getMilliSecondsFromUnits({ days: 1 })
+      let compareTime = plugins.smarttime.getMilliSecondsFromUnits({ hours: 1 })
       if (!lastCheckTimeStamp.isOlderThan(timeStamp, compareTime)) {
-        plugins.beautylog.log(`smartupdate: next check tomorrow: ${plugins.beautycolor.coloredString(`${npmnameArg} has already been checked for today.`, 'pink')}`)
+        plugins.beautylog.log(
+          `smartupdate: next check in : ` +
+          `${plugins.beautycolor.coloredString(
+            `${npmnameArg} has already been checked within the last hour.`
+            , 'pink'
+          )}`
+        )
         return
       }
     }
@@ -49,15 +55,18 @@ export class SmartUpdate {
 
   private async checkIfUpgrade (
     npmPackage: plugins.smartnpm.NpmPackage,
-    versionArg: string,
+    localVersionStringArg: string,
     changelogUrlArg?: string
   ) {
-    if (npmPackage.version === versionArg) {
+    // create Version objects
+    let versionNpm = new plugins.smartversion.SmartVersion(npmPackage.version)
+    let versionLocal = new plugins.smartversion.SmartVersion(localVersionStringArg)
+    if (versionNpm.greaterThan(versionLocal)) {
       plugins.beautylog.ok(`smartupdate: You are running the latest version of ${plugins.beautycolor.coloredString(npmPackage.name, 'pink')}`)
       return false
     } else {
       plugins.beautylog.warn(`There is a newer version of ${npmPackage.name} available on npm.`)
-      plugins.beautylog.warn(`Your version: ${versionArg} | version on npm: ${npmPackage.version}`)
+      plugins.beautylog.warn(`Your version: ${versionLocal.versionString} | version on npm: ${versionNpm.versionString}`)
       if (!process.env.CI && changelogUrlArg) {
         plugins.beautylog.log('trying to open changelog...')
         plugins.smartopen.openUrl(changelogUrlArg)

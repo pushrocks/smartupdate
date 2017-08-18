@@ -6,6 +6,7 @@ import * as npmextra from 'npmextra'
 import * as smartnpm from 'smartnpm'
 import * as smartopen from 'smartopen'
 import * as smarttime from 'smarttime'
+import * as smartversion from 'smartversion'
 
 export {
   beautylog,
@@ -13,5 +14,6 @@ export {
   npmextra,
   smartnpm,
   smartopen,
-  smarttime
+  smarttime,
+  smartversion
 }

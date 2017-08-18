@@ -53,8 +53,8 @@
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-2.0.29.tgz#5002e14f75e2d71e564281df0431c8c1b4a2a36a"
 
 "@types/node@*", "@types/node@^8.0.10":
-  version "8.0.22"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.22.tgz#9c6bfee1f45f5e9952ff6b487e657ecca48c7777"
+  version "8.0.24"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.24.tgz#06c580084d9add1fb40c1510ef0b448961246fb1"
 
 "@types/open@^0.0.29":
   version "0.0.29"
@@ -67,6 +67,10 @@
 "@types/q@1.x.x":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.0.3.tgz#08e99d20f7abfc0fe202b6d5a0921bfafcdea8d0"
+
+"@types/semver@^5.3.33":
+  version "5.3.34"
+  resolved "https://registry.yarnpkg.com/@types/semver/-/semver-5.3.34.tgz#6fade409ceb8ae817c1f7f1cfa5375416e97045f"
 
 "@types/shelljs@^0.7.2":
   version "0.7.4"
@@ -111,12 +115,11 @@ balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
 
-beautycolor@^1.0.10, beautycolor@^1.0.7, beautycolor@^1.0.9:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/beautycolor/-/beautycolor-1.0.10.tgz#4b50758e59115839b3bb2bfe8aaaec9e29c747dd"
+beautycolor@^1.0.11, beautycolor@^1.0.7, beautycolor@^1.0.9:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/beautycolor/-/beautycolor-1.0.11.tgz#71c5568d5a7ed5c144d3a54f753ad1b08862aea5"
   dependencies:
     ansi-256-colors "^1.1.0"
-    tapbundle "^1.1.1"
     typings-global "^1.0.14"
 
 beautylog@^6.1.10:
@@ -593,7 +596,7 @@ safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
 
-semver@^5.3.0:
+semver@^5.3.0, semver@^5.4.1:
   version "5.4.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.4.1.tgz#e059c09d8571f0540823733433505d3a2f00b18e"
 
@@ -712,6 +715,14 @@ smarttime@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/smarttime/-/smarttime-1.0.6.tgz#0412a021cff88e8e41b766103a2d9e42fe816ddc"
   dependencies:
+    typings-global "^1.0.16"
+
+smartversion@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/smartversion/-/smartversion-1.0.3.tgz#8b6b1553594a4df7fac8495bc2802b4a6f84a27c"
+  dependencies:
+    "@types/semver" "^5.3.33"
+    semver "^5.4.1"
     typings-global "^1.0.16"
 
 sprintf-js@~1.0.2:
