@@ -61,7 +61,7 @@ export class SmartUpdate {
     // create Version objects
     let versionNpm = new plugins.smartversion.SmartVersion(npmPackage.version)
     let versionLocal = new plugins.smartversion.SmartVersion(localVersionStringArg)
-    if (versionNpm.greaterThan(versionLocal)) {
+    if (!versionNpm.greaterThan(versionLocal)) {
       plugins.beautylog.ok(`smartupdate: You are running the latest version of ${plugins.beautycolor.coloredString(npmPackage.name, 'pink')}`)
       return false
     } else {
