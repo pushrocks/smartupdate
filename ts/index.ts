@@ -28,12 +28,12 @@ export class SmartUpdate {
 
     if (result) {
       let lastCheckTimeStamp = TimeStamp.fromMilliSeconds(result.lastCheck)
-      let compareTime = plugins.smarttime.getMilliSecondsFromUnits({ hours: 1 })
-      if (!lastCheckTimeStamp.isOlderThan(timeStamp, compareTime)) {
+      let tresholdTime = plugins.smarttime.getMilliSecondsFromUnits({ hours: 1 })
+      if (!lastCheckTimeStamp.isOlderThan(timeStamp, tresholdTime)) {
         newData.lastCheck = lastCheckTimeStamp.milliSeconds
-        let nextCheckInMinutes = (timeStamp.milliSeconds - lastCheckTimeStamp.milliSeconds) / 60000
+        let nextCheckInMinutes = (tresholdTime - (timeStamp.milliSeconds - lastCheckTimeStamp.milliSeconds)) / 60000
         plugins.beautylog.log(
-          `smartupdate: next check in ${nextCheckInMinutes}: ` +
+          `smartupdate: next check in ${Math.round(nextCheckInMinutes)} minutes: ` +
           `${plugins.beautycolor.coloredString(
             `${npmnameArg} has already been checked within the last hour.`
             , 'pink'

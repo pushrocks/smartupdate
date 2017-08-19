@@ -711,9 +711,9 @@ smartshell@^1.0.6:
     typings-global "^1.0.19"
     which "^1.2.14"
 
-smarttime@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/smarttime/-/smarttime-1.0.7.tgz#d3030d7cd71bf58d752e88c81f6f4fd59681efd1"
+smarttime@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/smarttime/-/smarttime-1.0.9.tgz#a307bde5bb56207a4bc92eeb416de503dae64fec"
   dependencies:
     typings-global "^1.0.16"
 
