@@ -14,22 +14,26 @@ export class SmartUpdate {
   kvStore = new plugins.npmextra.KeyValueStore('custom', 'global:smartupdate')
 
   async check (npmnameArg: string, compareVersion: string, changelogUrlArg?: string) {
-    let result: ICacheStatus = await this.kvStore.readKey(npmnameArg)
-    let timeStamp = new TimeStamp()
-
+    
     // the newData to write
+    let timeStamp = new TimeStamp()
     let newData = {
       lastCheck: timeStamp.milliSeconds,
       latestVersion: 'x.x.x',
       performedUpgrade: false
     }
+
+    // the comparison data from the keyValue store
+    let result: ICacheStatus = await this.kvStore.readKey(npmnameArg)
+
     if (result) {
       let lastCheckTimeStamp = TimeStamp.fromMilliSeconds(result.lastCheck)
       let compareTime = plugins.smarttime.getMilliSecondsFromUnits({ hours: 1 })
       if (!lastCheckTimeStamp.isOlderThan(timeStamp, compareTime)) {
         newData.lastCheck = lastCheckTimeStamp.milliSeconds
+        let nextCheckInMinutes = (timeStamp.milliSeconds - lastCheckTimeStamp.milliSeconds) / 60000
         plugins.beautylog.log(
-          `smartupdate: next check in : ` +
+          `smartupdate: next check in ${nextCheckInMinutes}: ` +
           `${plugins.beautycolor.coloredString(
             `${npmnameArg} has already been checked within the last hour.`
             , 'pink'
