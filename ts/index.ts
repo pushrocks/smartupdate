@@ -27,6 +27,7 @@ export class SmartUpdate {
       let lastCheckTimeStamp = TimeStamp.fromMilliSeconds(result.lastCheck)
       let compareTime = plugins.smarttime.getMilliSecondsFromUnits({ hours: 1 })
       if (!lastCheckTimeStamp.isOlderThan(timeStamp, compareTime)) {
+        newData.lastCheck = lastCheckTimeStamp.milliSeconds
         plugins.beautylog.log(
           `smartupdate: next check in : ` +
           `${plugins.beautycolor.coloredString(
@@ -40,7 +41,7 @@ export class SmartUpdate {
     let npmPackage = await this.getNpmPackageFromRegistry(npmnameArg)
     newData.latestVersion = npmPackage.version
     let upgradeBool = await this.checkIfUpgrade(npmPackage, compareVersion, changelogUrlArg)
-    if(upgradeBool) {
+    if (upgradeBool) {
       
     }
     this.kvStore.writeKey(npmnameArg, newData)
