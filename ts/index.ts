@@ -33,7 +33,7 @@ export class SmartUpdate {
         newData.lastCheck = lastCheckTimeStamp.milliSeconds
         let nextCheckInMinutes = (tresholdTime - (timeStamp.milliSeconds - lastCheckTimeStamp.milliSeconds)) / 60000
         plugins.beautylog.log(
-          `smartupdate: next check in ${Math.round(nextCheckInMinutes)} minutes: ` +
+          `next update check in less than ${Math.floor(nextCheckInMinutes) + 1} minute(s): ` +
           `${plugins.beautycolor.coloredString(
             `${npmnameArg} has already been checked within the last hour.`
             , 'pink'
