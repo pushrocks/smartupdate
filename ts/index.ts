@@ -14,7 +14,6 @@ export class SmartUpdate {
   kvStore = new plugins.npmextra.KeyValueStore('custom', 'global:smartupdate')
 
   async check (npmnameArg: string, compareVersion: string, changelogUrlArg?: string) {
-    
     // the newData to write
     let timeStamp = new TimeStamp()
     let newData = {
@@ -43,18 +42,27 @@ export class SmartUpdate {
       }
     }
     let npmPackage = await this.getNpmPackageFromRegistry(npmnameArg)
+    if (!npmPackage) {
+      return
+    }
     newData.latestVersion = npmPackage.version
     let upgradeBool = await this.checkIfUpgrade(npmPackage, compareVersion, changelogUrlArg)
     if (upgradeBool) {
-      
+      // TODO:
     }
     this.kvStore.writeKey(npmnameArg, newData)
   }
 
-  private async getNpmPackageFromRegistry (npmnameArg) {
+  private async getNpmPackageFromRegistry (npmnameArg): Promise<plugins.smartnpm.NpmPackage> {
     plugins.beautylog.log(`smartupdate: checking for newer version of ${plugins.beautycolor.coloredString(npmnameArg, 'pink')}...`)
     let npmRegistry = new plugins.smartnpm.NpmRegistry()
-    let npmPackage = (await npmRegistry.search({ name: npmnameArg, boostExact: true }))[0]
+    let npmPackage: plugins.smartnpm.NpmPackage
+    try {
+      npmPackage = (await npmRegistry.search({ name: npmnameArg, boostExact: true }))[0]
+    } catch (err) {
+      plugins.beautylog.warn('failed to retrieve package information...')
+      return null
+    }
     return npmPackage
   }
 
