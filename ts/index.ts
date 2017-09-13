@@ -43,6 +43,8 @@ export class SmartUpdate {
     }
     let npmPackage = await this.getNpmPackageFromRegistry(npmnameArg)
     if (!npmPackage) {
+      plugins.beautylog.warn('failed to retrieve package information...')
+      plugins.beautylog.info('npms.io might be down')
       return
     }
     newData.latestVersion = npmPackage.version
@@ -57,12 +59,7 @@ export class SmartUpdate {
     plugins.beautylog.log(`smartupdate: checking for newer version of ${plugins.beautycolor.coloredString(npmnameArg, 'pink')}...`)
     let npmRegistry = new plugins.smartnpm.NpmRegistry()
     let npmPackage: plugins.smartnpm.NpmPackage
-    try {
-      npmPackage = (await npmRegistry.search({ name: npmnameArg, boostExact: true }))[0]
-    } catch (err) {
-      plugins.beautylog.warn('failed to retrieve package information...')
-      return null
-    }
+    npmPackage = (await npmRegistry.search({ name: npmnameArg, boostExact: true }))[ 0 ]
     return npmPackage
   }
 
