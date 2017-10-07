@@ -1,6 +1,6 @@
 {
   "name": "smartupdate",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "update your tools in a smart way",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
