@@ -12,7 +12,7 @@ const plugins = require("./smartupdate.plugins");
 const smarttime_1 = require("smarttime");
 class SmartUpdate {
     constructor() {
-        this.kvStore = new plugins.npmextra.KeyValueStore('custom', 'global:smartupdate');
+        this.kvStore = new plugins.npmextra.KeyValueStore('custom', 'global_smartupdate');
     }
     check(npmnameArg, compareVersion, changelogUrlArg) {
         return __awaiter(this, void 0, void 0, function* () {

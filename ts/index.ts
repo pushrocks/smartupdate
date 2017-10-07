@@ -11,7 +11,7 @@ interface ICacheStatus {
 import { KeyValueStore } from 'npmextra'
 
 export class SmartUpdate {
-  kvStore = new plugins.npmextra.KeyValueStore('custom', 'global:smartupdate')
+  kvStore = new plugins.npmextra.KeyValueStore('custom', 'global_smartupdate')
 
   async check (npmnameArg: string, compareVersion: string, changelogUrlArg?: string) {
     // the newData to write
