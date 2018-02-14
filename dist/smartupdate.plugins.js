@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-require("typings-global");
 const beautylog = require("beautylog");
 exports.beautylog = beautylog;
 const beautycolor = require("beautycolor");
@@ -15,4 +14,4 @@ const smarttime = require("smarttime");
 exports.smarttime = smarttime;
 const smartversion = require("smartversion");
 exports.smartversion = smartversion;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic21hcnR1cGRhdGUucGx1Z2lucy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL3RzL3NtYXJ0dXBkYXRlLnBsdWdpbnMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSwwQkFBdUI7QUFFdkIsdUNBQXNDO0FBU3BDLDhCQUFTO0FBUlgsMkNBQTBDO0FBU3hDLGtDQUFXO0FBUmIscUNBQW9DO0FBU2xDLDRCQUFRO0FBUlYscUNBQW9DO0FBU2xDLDRCQUFRO0FBUlYsdUNBQXNDO0FBU3BDLDhCQUFTO0FBUlgsdUNBQXNDO0FBU3BDLDhCQUFTO0FBUlgsNkNBQTRDO0FBUzFDLG9DQUFZIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic21hcnR1cGRhdGUucGx1Z2lucy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL3RzL3NtYXJ0dXBkYXRlLnBsdWdpbnMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSx1Q0FBc0M7QUFTcEMsOEJBQVM7QUFSWCwyQ0FBMEM7QUFTeEMsa0NBQVc7QUFSYixxQ0FBb0M7QUFTbEMsNEJBQVE7QUFSVixxQ0FBb0M7QUFTbEMsNEJBQVE7QUFSVix1Q0FBc0M7QUFTcEMsOEJBQVM7QUFSWCx1Q0FBc0M7QUFTcEMsOEJBQVM7QUFSWCw2Q0FBNEM7QUFTMUMsb0NBQVkifQ==

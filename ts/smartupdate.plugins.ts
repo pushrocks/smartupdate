@@ -1,5 +1,3 @@
-import 'typings-global'
-
 import * as beautylog from 'beautylog'
 import * as beautycolor from 'beautycolor'
 import * as npmextra from 'npmextra'

@@ -10,7 +10,7 @@
     "test": "(npmts)"
   },
   "devDependencies": {
-    "tapbundle": "^1.1.1"
+    "tapbundle": "^1.1.8"
   },
   "dependencies": {
     "beautycolor": "^1.0.11",
@@ -19,7 +19,6 @@
     "smartnpm": "^1.0.5",
     "smartopen": "^1.0.3",
     "smarttime": "^1.0.10",
-    "smartversion": "^1.0.3",
-    "typings-global": "^1.0.20"
+    "smartversion": "^1.0.3"
   }
 }

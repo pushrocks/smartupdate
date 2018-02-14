@@ -21,6 +21,18 @@ update your tools in a smart way
 ## Usage
 Use TypeScript for best in class instellisense.
 
+smartupdate makes it really easy to notify your tool users about new versions:
+
+```typescript
+import * as smartupdate from 'smartupdate';
+
+// the following command will check npm for a version newer than the specified one.
+// It will open the specified URL if a newer version is actually found.
+await smartupdate
+  .standardHandler
+  .check('lodash', '1.0.5', 'http://gitzone.gitlab.io/npmts/changelog.html')
+```
+
 For further information read the linked docs at the top of this README.
 
 > MIT licensed | **&copy;** [Lossless GmbH](https://lossless.gmbh)
