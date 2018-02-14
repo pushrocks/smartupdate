@@ -66,7 +66,7 @@ balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
 
-beautycolor@^1.0.11, beautycolor@^1.0.7, beautycolor@^1.0.9:
+beautycolor@^1.0.11, beautycolor@^1.0.7:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/beautycolor/-/beautycolor-1.0.11.tgz#71c5568d5a7ed5c144d3a54f753ad1b08862aea5"
   dependencies:
@@ -564,14 +564,13 @@ smartlodash@^1.0.1:
     "@types/node" "^8.0.10"
     lodash "^4.17.4"
 
-smartnpm@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/smartnpm/-/smartnpm-1.0.5.tgz#52d79269b41b93a17d87bf71b83b26006dd46088"
+smartnpm@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/smartnpm/-/smartnpm-1.0.6.tgz#9ba48c9aa8f84c8ea03c9ed1a8f8d13dda7ffcdf"
   dependencies:
-    beautycolor "^1.0.9"
+    beautycolor "^1.0.11"
     beautylog "^6.1.10"
-    smartrequest "^1.0.6"
-    typings-global "^1.0.16"
+    smartrequest "^1.0.8"
 
 smartopen@^1.0.3:
   version "1.0.3"
@@ -595,7 +594,7 @@ smartq@^1.1.1, smartq@^1.1.6:
     typings-global "^1.0.19"
     util.promisify "^1.0.0"
 
-smartrequest@^1.0.6:
+smartrequest@^1.0.6, smartrequest@^1.0.8:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/smartrequest/-/smartrequest-1.0.8.tgz#9af18dde34efa7d43b4ecfc92ccb157a98eda3b1"
   dependencies:
