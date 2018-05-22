@@ -1,5 +1,5 @@
 {
-  "name": "smartupdate",
+  "name": "@pushrocks/smartupdate",
   "version": "1.0.16",
   "description": "update your tools in a smart way",
   "main": "dist/index.js",

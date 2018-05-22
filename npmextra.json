@@ -2,7 +2,8 @@
   "npmci": {
     "npmGlobalTools": [
       "npmts"
-    ]
+    ],
+    "npmAccessLevel": "public"
   },
   "npmts": {
     "coverageTreshold": 50
