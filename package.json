@@ -7,18 +7,19 @@
   "author": "Lossless GmbH",
   "license": "MIT",
   "scripts": {
-    "test": "(npmts)"
+    "test": "(npmts)",
+    "build": "(npmts)"
   },
   "devDependencies": {
-    "tapbundle": "^1.1.8"
+    "tapbundle": "^2.0.0"
   },
   "dependencies": {
+    "@pushrocks/smartopen": "^1.0.7",
     "beautycolor": "^1.0.11",
     "beautylog": "^6.1.10",
     "npmextra": "^2.0.9",
     "smartnpm": "^1.0.6",
-    "smartopen": "^1.0.3",
-    "smarttime": "^1.0.10",
+    "smarttime": "^2.0.0",
     "smartversion": "^1.0.3"
   }
 }
