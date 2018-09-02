@@ -1,6 +1,6 @@
 {
   "name": "@pushrocks/smartupdate",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "private": false,
   "description": "update your tools in a smart way",
   "main": "dist/index.js",
