@@ -25,6 +25,6 @@
     "@pushrocks/smartnpm": "^1.0.8",
     "@pushrocks/smartopen": "^1.0.8",
     "@pushrocks/smarttime": "^2.0.2",
-    "smartversion": "^1.0.3"
+    "@pushrocks/smartversion": "^2.0.0"
   }
 }
