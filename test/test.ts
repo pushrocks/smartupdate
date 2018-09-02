@@ -1,4 +1,4 @@
-import { expect, tap } from 'tapbundle';
+import { expect, tap } from '@pushrocks/tapbundle';
 import * as smartupdate from '../ts/index';
 
 tap.test('should check for a npm module', async () => {

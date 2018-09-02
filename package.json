@@ -1,25 +1,30 @@
 {
   "name": "@pushrocks/smartupdate",
   "version": "1.0.18",
+  "private": false,
   "description": "update your tools in a smart way",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "author": "Lossless GmbH",
   "license": "MIT",
   "scripts": {
-    "test": "(npmts)",
-    "build": "(npmts)"
+    "test": "(tstest test/)",
+    "build": "(tsbuild)"
   },
   "devDependencies": {
-    "tapbundle": "^2.0.0"
+    "@gitzone/tsbuild": "^2.0.22",
+    "@gitzone/tsrun": "^1.1.12",
+    "@gitzone/tstest": "^1.0.15",
+    "@pushrocks/tapbundle": "^3.0.5",
+    "@types/node": "^10.9.4"
   },
   "dependencies": {
-    "@pushrocks/smartopen": "^1.0.7",
-    "beautycolor": "^1.0.11",
-    "beautylog": "^6.1.10",
-    "npmextra": "^2.0.9",
-    "smartnpm": "^1.0.6",
-    "smarttime": "^2.0.0",
+    "@pushrocks/consolecolor": "^2.0.1",
+    "@pushrocks/npmextra": "^3.0.1",
+    "@pushrocks/smartlog": "^2.0.1",
+    "@pushrocks/smartnpm": "^1.0.8",
+    "@pushrocks/smartopen": "^1.0.8",
+    "@pushrocks/smarttime": "^2.0.2",
     "smartversion": "^1.0.3"
   }
 }

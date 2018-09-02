@@ -1,6 +1,6 @@
 import * as plugins from './smartupdate.plugins';
 
-import { TimeStamp } from 'smarttime';
+import { TimeStamp } from '@pushrocks/smarttime';
 
 interface ICacheStatus {
   lastCheck: number;
@@ -8,7 +8,7 @@ interface ICacheStatus {
   performedUpgrade: boolean;
 }
 
-import { KeyValueStore } from 'npmextra';
+import { KeyValueStore } from '@pushrocks/npmextra';
 
 export class SmartUpdate {
   kvStore = new plugins.npmextra.KeyValueStore('custom', 'global_smartupdate');
@@ -32,9 +32,9 @@ export class SmartUpdate {
         newData.lastCheck = lastCheckTimeStamp.milliSeconds;
         let nextCheckInMinutes =
           (tresholdTime - (timeStamp.milliSeconds - lastCheckTimeStamp.milliSeconds)) / 60000;
-        plugins.beautylog.log(
+        console.log(
           `next update check in less than ${Math.floor(nextCheckInMinutes) + 1} minute(s): ` +
-            `${plugins.beautycolor.coloredString(
+            `${plugins.consolecolor.coloredString(
               `${npmnameArg} has already been checked within the last hour.`,
               'pink'
             )}`
@@ -44,8 +44,8 @@ export class SmartUpdate {
     }
     let npmPackage = await this.getNpmPackageFromRegistry(npmnameArg);
     if (!npmPackage) {
-      plugins.beautylog.warn('failed to retrieve package information...');
-      plugins.beautylog.info('npms.io might be down');
+      plugins.smartlog.defaultLogger.warn('failed to retrieve package information...');
+      plugins.smartlog.defaultLogger.info('npms.io might be down');
       return;
     }
     newData.latestVersion = npmPackage.version;
@@ -57,8 +57,8 @@ export class SmartUpdate {
   }
 
   private async getNpmPackageFromRegistry(npmnameArg): Promise<plugins.smartnpm.NpmPackage> {
-    plugins.beautylog.log(
-      `smartupdate: checking for newer version of ${plugins.beautycolor.coloredString(
+    console.log(
+      `smartupdate: checking for newer version of ${plugins.consolecolor.coloredString(
         npmnameArg,
         'pink'
       )}...`
@@ -78,20 +78,20 @@ export class SmartUpdate {
     let versionNpm = new plugins.smartversion.SmartVersion(npmPackage.version);
     let versionLocal = new plugins.smartversion.SmartVersion(localVersionStringArg);
     if (!versionNpm.greaterThan(versionLocal)) {
-      plugins.beautylog.ok(
-        `smartupdate: You are running the latest version of ${plugins.beautycolor.coloredString(
+      console.log(
+        `smartupdate: You are running the latest version of ${plugins.consolecolor.coloredString(
           npmPackage.name,
           'pink'
         )}`
       );
       return false;
     } else {
-      plugins.beautylog.warn(`There is a newer version of ${npmPackage.name} available on npm.`);
-      plugins.beautylog.warn(
+      plugins.smartlog.defaultLogger.warn(`There is a newer version of ${npmPackage.name} available on npm.`);
+      plugins.smartlog.defaultLogger.warn(
         `Your version: ${versionLocal.versionString} | version on npm: ${versionNpm.versionString}`
       );
       if (!process.env.CI && changelogUrlArg) {
-        plugins.beautylog.log('trying to open changelog...');
+        console.log('trying to open changelog...');
         plugins.smartopen.openUrl(changelogUrlArg);
       }
       return true;

@@ -1,9 +1,10 @@
-import * as beautylog from 'beautylog';
-import * as beautycolor from 'beautycolor';
-import * as npmextra from 'npmextra';
-import * as smartnpm from 'smartnpm';
+import * as smartlog from '@pushrocks/smartlog';
+smartlog.defaultLogger.enableConsole();
+import * as consolecolor from '@pushrocks/consolecolor';
+import * as npmextra from '@pushrocks/npmextra';
+import * as smartnpm from '@pushrocks/smartnpm';
 import * as smartopen from '@pushrocks/smartopen';
-import * as smarttime from 'smarttime';
+import * as smarttime from '@pushrocks/smarttime';
 import * as smartversion from 'smartversion';
 
-export { beautylog, beautycolor, npmextra, smartnpm, smartopen, smarttime, smartversion };
+export { smartlog, consolecolor, npmextra, smartnpm, smartopen, smarttime, smartversion };
