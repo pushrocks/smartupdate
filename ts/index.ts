@@ -86,7 +86,9 @@ export class SmartUpdate {
       );
       return false;
     } else {
-      plugins.smartlog.defaultLogger.warn(`There is a newer version of ${npmPackage.name} available on npm.`);
+      plugins.smartlog.defaultLogger.warn(
+        `There is a newer version of ${npmPackage.name} available on npm.`
+      );
       plugins.smartlog.defaultLogger.warn(
         `Your version: ${versionLocal.versionString} | version on npm: ${versionNpm.versionString}`
       );
