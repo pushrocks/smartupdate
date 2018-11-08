@@ -44,8 +44,8 @@ export class SmartUpdate {
     }
     let npmPackage = await this.getNpmPackageFromRegistry(npmnameArg);
     if (!npmPackage) {
-      plugins.smartlog.defaultLogger.warn('failed to retrieve package information...');
-      plugins.smartlog.defaultLogger.info('npms.io might be down');
+      plugins.smartlog.defaultLogger.log('warn', 'failed to retrieve package information...');
+      plugins.smartlog.defaultLogger.log('info', 'npms.io might be down');
       return;
     }
     newData.latestVersion = npmPackage.version;
@@ -86,10 +86,12 @@ export class SmartUpdate {
       );
       return false;
     } else {
-      plugins.smartlog.defaultLogger.warn(
+      plugins.smartlog.defaultLogger.log(
+        'warn',
         `There is a newer version of ${npmPackage.name} available on npm.`
       );
-      plugins.smartlog.defaultLogger.warn(
+      plugins.smartlog.defaultLogger.log(
+        'warn',
         `Your version: ${versionLocal.versionString} | version on npm: ${versionNpm.versionString}`
       );
       if (!process.env.CI && changelogUrlArg) {
