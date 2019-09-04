@@ -11,26 +11,26 @@ interface ICacheStatus {
 import { KeyValueStore } from '@pushrocks/npmextra';
 
 export class SmartUpdate {
-  kvStore = new plugins.npmextra.KeyValueStore('custom', 'global_smartupdate');
+  public kvStore = new plugins.npmextra.KeyValueStore('custom', 'global_smartupdate');
 
-  async check(npmnameArg: string, compareVersion: string, changelogUrlArg?: string) {
+  public async check(npmnameArg: string, compareVersion: string, changelogUrlArg?: string) {
     // the newData to write
-    let timeStamp = new TimeStamp();
-    let newData = {
+    const timeStamp = new TimeStamp();
+    const newData = {
       lastCheck: timeStamp.milliSeconds,
       latestVersion: 'x.x.x',
       performedUpgrade: false
     };
 
     // the comparison data from the keyValue store
-    let result: ICacheStatus = await this.kvStore.readKey(npmnameArg);
+    const result: ICacheStatus = await this.kvStore.readKey(npmnameArg);
 
     if (result) {
-      let lastCheckTimeStamp = TimeStamp.fromMilliSeconds(result.lastCheck);
-      let tresholdTime = plugins.smarttime.getMilliSecondsFromUnits({ hours: 1 });
+      const lastCheckTimeStamp = TimeStamp.fromMilliSeconds(result.lastCheck);
+      const tresholdTime = plugins.smarttime.getMilliSecondsFromUnits({ hours: 1 });
       if (!lastCheckTimeStamp.isOlderThan(timeStamp, tresholdTime)) {
         newData.lastCheck = lastCheckTimeStamp.milliSeconds;
-        let nextCheckInMinutes =
+        const nextCheckInMinutes =
           (tresholdTime - (timeStamp.milliSeconds - lastCheckTimeStamp.milliSeconds)) / 60000;
         console.log(
           `next update check in less than ${Math.floor(nextCheckInMinutes) + 1} minute(s): ` +
@@ -42,14 +42,14 @@ export class SmartUpdate {
         return;
       }
     }
-    let npmPackage = await this.getNpmPackageFromRegistry(npmnameArg);
+    const npmPackage = await this.getNpmPackageFromRegistry(npmnameArg);
     if (!npmPackage) {
       plugins.smartlog.defaultLogger.log('warn', 'failed to retrieve package information...');
       plugins.smartlog.defaultLogger.log('info', 'npms.io might be down');
       return;
     }
     newData.latestVersion = npmPackage.version;
-    let upgradeBool = await this.checkIfUpgrade(npmPackage, compareVersion, changelogUrlArg);
+    const upgradeBool = await this.checkIfUpgrade(npmPackage, compareVersion, changelogUrlArg);
     if (upgradeBool) {
       // TODO:
     }
@@ -63,9 +63,8 @@ export class SmartUpdate {
         'pink'
       )}...`
     );
-    let npmRegistry = new plugins.smartnpm.NpmRegistry();
-    let npmPackage: plugins.smartnpm.NpmPackage;
-    npmPackage = (await npmRegistry.search({ name: npmnameArg, boostExact: true }))[0];
+    const npmRegistry = new plugins.smartnpm.NpmRegistry();
+    const npmPackage = (await npmRegistry.search({ name: npmnameArg, boostExact: true }))[0];
     return npmPackage;
   }
 
@@ -75,8 +74,8 @@ export class SmartUpdate {
     changelogUrlArg?: string
   ) {
     // create Version objects
-    let versionNpm = new plugins.smartversion.SmartVersion(npmPackage.version);
-    let versionLocal = new plugins.smartversion.SmartVersion(localVersionStringArg);
+    const versionNpm = new plugins.smartversion.SmartVersion(npmPackage.version);
+    const versionLocal = new plugins.smartversion.SmartVersion(localVersionStringArg);
     if (!versionNpm.greaterThan(versionLocal)) {
       console.log(
         `smartupdate: You are running the latest version of ${plugins.consolecolor.coloredString(
