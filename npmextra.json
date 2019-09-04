@@ -5,5 +5,15 @@
   },
   "npmts": {
     "coverageTreshold": 50
+  },
+  "gitzone": {
+    "module": {
+      "githost": "gitlab.com",
+      "gitscope": "pushrocks",
+      "gitrepo": "smartupdate",
+      "shortDescription": "update your tools in a smart way",
+      "npmPackagename": "@pushrocks/smartupdate",
+      "license": "MIT"
+    }
   }
 }
