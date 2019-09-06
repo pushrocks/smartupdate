@@ -64,7 +64,7 @@ export class SmartUpdate {
       )}...`
     );
     const npmRegistry = new plugins.smartnpm.NpmRegistry();
-    const npmPackage = (await npmRegistry.search({ name: npmnameArg, boostExact: true }))[0];
+    const npmPackage = npmRegistry.getPackageInfo(npmnameArg);
     return npmPackage;
   }
 

@@ -24,7 +24,7 @@
     "@pushrocks/consolecolor": "^2.0.1",
     "@pushrocks/npmextra": "^3.0.5",
     "@pushrocks/smartlog": "^2.0.19",
-    "@pushrocks/smartnpm": "^1.0.10",
+    "@pushrocks/smartnpm": "^1.0.12",
     "@pushrocks/smartopen": "^1.0.22",
     "@pushrocks/smarttime": "^3.0.12",
     "@pushrocks/smartversion": "^2.0.0"
