@@ -54,7 +54,7 @@ export class SmartUpdate {
       newCacheData.latestVersion = npmPackage.version;
       this.kvStore.writeKey(npmnameArg, newCacheData);
     }
-    
+
     return upgradeBool;
   }
 
@@ -93,9 +93,7 @@ export class SmartUpdate {
       );
       return false;
     } else {
-      console.log(
-        `warn: There is a newer version of ${npmPackage.name} available on npm.`
-      );
+      console.log(`warn: There is a newer version of ${npmPackage.name} available on npm.`);
       console.log(
         `warn: Your version: ${versionLocal.versionString} | version on npm: ${versionNpm.versionString}`
       );

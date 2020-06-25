@@ -3,8 +3,8 @@
   "version": "1.0.29",
   "private": false,
   "description": "update your tools in a smart way",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist_ts/index.js",
+  "typings": "dist_ts/index.d.ts",
   "author": "Lossless GmbH",
   "license": "MIT",
   "scripts": {
@@ -29,12 +29,13 @@
     "@pushrocks/smartversion": "^2.0.4"
   },
   "files": [
-    "ts/*",
-    "ts_web/*",
-    "dist/*",
-    "dist_web/*",
-    "dist_ts_web/*",
-    "assets/*",
+    "ts/**/*",
+    "ts_web/**/*",
+    "dist/**/*",
+    "dist_*/**/*",
+    "dist_ts/**/*",
+    "dist_ts_web/**/*",
+    "assets/**/*",
     "cli.js",
     "npmextra.json",
     "readme.md"

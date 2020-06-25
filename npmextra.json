@@ -3,10 +3,8 @@
     "npmGlobalTools": [],
     "npmAccessLevel": "public"
   },
-  "npmts": {
-    "coverageTreshold": 50
-  },
   "gitzone": {
+    "projectType": "npm",
     "module": {
       "githost": "gitlab.com",
       "gitscope": "pushrocks",
