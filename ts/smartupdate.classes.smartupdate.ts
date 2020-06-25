@@ -76,8 +76,8 @@ export class SmartUpdate {
   ) {
     const npmPackage = await this.getNpmPackageFromRegistry(npmPackageName);
     if (!npmPackage) {
-      plugins.smartlog.defaultLogger.log('warn', 'failed to retrieve package information...');
-      plugins.smartlog.defaultLogger.log('info', 'is the registry down?');
+      console.log('warn: failed to retrieve package information...');
+      console.log('info: is the registry down?');
       return;
     }
 
@@ -93,13 +93,11 @@ export class SmartUpdate {
       );
       return false;
     } else {
-      plugins.smartlog.defaultLogger.log(
-        'warn',
-        `There is a newer version of ${npmPackage.name} available on npm.`
+      console.log(
+        `warn: There is a newer version of ${npmPackage.name} available on npm.`
       );
-      plugins.smartlog.defaultLogger.log(
-        'warn',
-        `Your version: ${versionLocal.versionString} | version on npm: ${versionNpm.versionString}`
+      console.log(
+        `warn: Your version: ${versionLocal.versionString} | version on npm: ${versionNpm.versionString}`
       );
       if (!process.env.CI && changelogUrlArg) {
         console.log('trying to open changelog...');

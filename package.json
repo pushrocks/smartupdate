@@ -12,21 +12,20 @@
     "build": "(tsbuild)"
   },
   "devDependencies": {
-    "@gitzone/tsbuild": "^2.1.17",
-    "@gitzone/tsrun": "^1.2.8",
-    "@gitzone/tstest": "^1.0.24",
-    "@pushrocks/tapbundle": "^3.0.13",
-    "@types/node": "^12.7.5",
-    "tslint": "^5.20.0",
+    "@gitzone/tsbuild": "^2.1.24",
+    "@gitzone/tsrun": "^1.2.12",
+    "@gitzone/tstest": "^1.0.33",
+    "@pushrocks/tapbundle": "^3.2.1",
+    "@types/node": "^14.0.14",
+    "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0"
   },
   "dependencies": {
     "@pushrocks/consolecolor": "^2.0.1",
     "@pushrocks/npmextra": "^3.0.7",
-    "@pushrocks/smartlog": "^2.0.19",
-    "@pushrocks/smartnpm": "^1.0.13",
+    "@pushrocks/smartnpm": "^1.0.17",
     "@pushrocks/smartopen": "^1.0.22",
-    "@pushrocks/smarttime": "^3.0.12",
+    "@pushrocks/smarttime": "^3.0.18",
     "@pushrocks/smartversion": "^2.0.4"
   },
   "files": [
